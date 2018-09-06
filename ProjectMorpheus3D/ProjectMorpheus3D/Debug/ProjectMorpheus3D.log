@@ -1,2 +1,5 @@
 ﻿  main.cpp
+z:\projectmorpheus\projectmorpheus3d\projectmorpheus3d\color.h(76): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+z:\projectmorpheus\projectmorpheus3d\projectmorpheus3d\color.h(81): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+z:\projectmorpheus\projectmorpheus3d\projectmorpheus3d\color.h(86): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
   ProjectMorpheus3D.vcxproj -> Z:\ProjectMorpheus\ProjectMorpheus3D\Debug\ProjectMorpheus3D.exe

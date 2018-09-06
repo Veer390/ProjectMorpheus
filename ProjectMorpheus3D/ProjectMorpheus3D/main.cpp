@@ -5,6 +5,9 @@
 #include<string.h>
 #include<conio.h>
 
+#include "Graphics.h"
+
+void RenderRoutine(Graphics* gfx);
 int main()
 {
 	if (!glfwInit())
@@ -14,6 +17,39 @@ int main()
 		exit(-1);
 	}
 
-	while (true);
+	Graphics gfx(1280, 1280, "Test");
+	gfx.SetAsCurrentContext();
+
+	if (glewInit())
+	{
+		std::cout << "Failed To Initialize Glew Now Quitting" << std::endl;
+		_getch();
+		exit(-1);
+	}
+
+	//Main Loop For The Window
+	while (!gfx.ShouldWindowClose())
+	{
+		glClear(GL_COLOR_BUFFER_BIT);
+
+
+		glColor3f(255, 255, 255);
+
+		//Render here
+		RenderRoutine(&gfx);
+
+		glfwSwapBuffers(gfx.GetWindowAssociated());
+		glfwPollEvents();
+
+	}
+
+	glfwTerminate();
+	return 0;
 	
+}
+
+void RenderRoutine(Graphics*gfx)
+{
+	//Test Purposes Only
+	gfx->DrawLine({ 0,0 }, { 1280,1280 }, { 255,255,255 });
 }
