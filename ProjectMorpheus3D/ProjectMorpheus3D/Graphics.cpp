@@ -15,12 +15,20 @@ void Graphics::SetAsCurrentContext()
 	glfwMakeContextCurrent(CurrentWindow);
 }
 
+int Graphics::GetScreenHeight()
+{
+	return Height;
+}
+
+int Graphics::GetScreenWidth()
+{
+	return Width;
+}
+
 void Graphics::PutPixel(int Width, int Height,Color c)
 {
 	//float xFactor = float(Width) / 2.0f;
 	//float yFactor = float(Height) / 2.0f;
-
-	
 
 	_Vec2<float> Final = { -1.0f,1.0f };
 	int x = Width;

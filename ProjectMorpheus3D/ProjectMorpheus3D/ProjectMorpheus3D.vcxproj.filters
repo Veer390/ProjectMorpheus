@@ -27,6 +27,9 @@
     <ClCompile Include="Graphics.cpp">
       <Filter>Header Files\Graphics</Filter>
     </ClCompile>
+    <ClCompile Include="WorldSpaceToScreenSpaceTransformer.cpp">
+      <Filter>Header Files\Graphics</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Color.h">
@@ -46,6 +49,9 @@
     </ClInclude>
     <ClInclude Include="Vec3.h">
       <Filter>Header Files\DataStructures</Filter>
+    </ClInclude>
+    <ClInclude Include="WorldSpaceToScreenSpaceTransformer.h">
+      <Filter>Header Files\Graphics</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

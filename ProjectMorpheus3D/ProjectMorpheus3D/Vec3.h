@@ -8,8 +8,8 @@ public:
 	_Vec3() {}
 	_Vec3(T x, T y, T z)
 		:
-		_Vec2(x, y),
-		z(z)
+		z(z),
+		_Vec2<T>(x,y)
 	{}
 	_Vec3(const _Vec3& vect)
 		:

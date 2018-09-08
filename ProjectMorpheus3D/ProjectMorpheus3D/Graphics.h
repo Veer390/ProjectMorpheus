@@ -41,6 +41,8 @@ public:
 	GLFWwindow * GetWindowAssociated();
 	bool ShouldWindowClose();
 	void SetAsCurrentContext();
+	int GetScreenHeight();
+	int GetScreenWidth();
 
 	//MainFunctions
 public:
