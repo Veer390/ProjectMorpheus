@@ -48,6 +48,18 @@ void Game::ComposeFrame()
 
 void Game::DrawFrame()
 {
+	if (kbd->CheckKeyIsPressed(265))
+	{
+		TestCube.RotateX(theta);
+	}
+	if (kbd->CheckKeyIsPressed(263))
+	{
+		TestCube.RotateY(theta);
+	}
+	if (kbd->CheckKeyIsPressed(262))
+	{
+		TestCube.RotateZ(theta);
+	}
 	//BaseModel bsm = TestCube::BaseModel;
 	gfx.DrawModel(TestCube);
 	//gfx.DrawLine({ 320,960 }, { 960,960 }, { 255,0,0 });

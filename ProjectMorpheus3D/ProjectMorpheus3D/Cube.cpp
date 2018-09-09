@@ -9,9 +9,9 @@ Cube::Cube(float side)
 {
 	std::vector<Vec3> _Vertices = {
 
-	{ -side/2,side/2,side },{ side / 2,side / 2,side },{ side / 2,side / 2,side / 2 },
-	{ -side / 2,side / 2,side / 2 },{ -side / 2,-side / 2,side },{ side / 2,-side / 2,side },
-	{ side / 2,-side / 2,side / 2 },{ -side/2,-side / 2,side / 2 }
+	{ -side/2,side/2,side/2 },{ side / 2,side / 2,side/2 },{ side / 2,side / 2,-side / 2 },
+	{ -side / 2,side / 2,-side / 2 },{ -side / 2,-side / 2,side/2 },{ side / 2,-side / 2,side/2 },
+	{ side / 2,-side / 2,-side / 2 },{ -side/2,-side / 2,-side / 2 }
 	};
 
 	std::vector<int> _Indices = { 1,2,  2,3,  4,3,  4,1 ,

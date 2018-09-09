@@ -22,4 +22,12 @@ public:
 	std::string GetName();
 	std::vector<Vec3> GetVertices();
 	std::vector<int> GetIndices();
+		
+public:
+	//Main Functions...
+
+	//Rotates on the Origin of the World Space...
+	void RotateX(float theta);
+	void RotateY(float theta);
+	void RotateZ(float theta);
 };

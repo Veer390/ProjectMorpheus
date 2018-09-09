@@ -37,6 +37,7 @@ public:
 	void GameLoop();
 	bool IsGameOver();
 
+	float theta = 0.1f;
 	//Test Code
 public:
 	Cube TestCube;
