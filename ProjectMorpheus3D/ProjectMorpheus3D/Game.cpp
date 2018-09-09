@@ -13,12 +13,13 @@ bool Game::IsGameOver()
 }
 
 
-Game::Game(std::string Identifier, Graphics & gfx)
+Game::Game(std::string Identifier, Graphics & gfx,Keyboard* kb)
 	:
 	Identifier(Identifier),
 	gfx(gfx),
 	Transformer(gfx.GetScreenWidth(),gfx.GetScreenHeight()),
-	TestCube(1.0f)
+	TestCube(1.0f),
+	kbd(kb)
 {
 #ifdef DEBUG
 	std::cout << "Game Initialized Successfully... IDENTIFIER : " << Identifier << std::endl;

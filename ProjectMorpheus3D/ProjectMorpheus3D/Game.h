@@ -3,6 +3,7 @@
 #include <vector>
 #include <string>
 
+#include "Keyboard.h"
 #include "Graphics.h"
 #include "Mat3.h"
 #include "Vec3.h"
@@ -15,12 +16,13 @@ class Game
 {
 public:
 	Game() = delete; //Cannot Default Construct Game..
-	Game(std::string Identifier, Graphics& gfx);
+	Game(std::string Identifier, Graphics& gfx,Keyboard* kb);
 
 private:
 	std::string Identifier;
 	Graphics gfx;
 	WorldToScreenSpaceTransformer Transformer;
+	Keyboard* kbd;
 
 	//Flags
 	bool QuitGame = false;

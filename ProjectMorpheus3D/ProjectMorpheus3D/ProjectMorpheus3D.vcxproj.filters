@@ -25,6 +25,9 @@
     <Filter Include="Header Files\Models">
       <UniqueIdentifier>{6fa2627c-610c-4181-81ee-f6ee6391db67}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Input">
+      <UniqueIdentifier>{cde48fa7-f61b-45d4-8f1e-363209ebdd0b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -79,6 +82,12 @@
     </ClInclude>
     <ClInclude Include="BaseModel.h">
       <Filter>Header Files\Models</Filter>
+    </ClInclude>
+    <ClInclude Include="Input.h">
+      <Filter>Header Files\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="Keyboard.h">
+      <Filter>Header Files\Input</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

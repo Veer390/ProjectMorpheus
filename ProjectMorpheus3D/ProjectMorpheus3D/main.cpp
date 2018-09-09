@@ -6,9 +6,14 @@
 #include<conio.h>
 
 #include "Graphics.h"
+#include "Keyboard.h"
 #include "Game.h"
 
+//Global Keyboard Object.. //As The Engine Supports Only One Keyboard...
+Keyboard keyboard;
+
 void RenderRoutine(Graphics* gfx);
+void key_callback(GLFWwindow* window, int key, int scancode, int action, int mods);
 int main()
 {
 	if (!glfwInit())
@@ -23,7 +28,7 @@ int main()
 	gfx.SetAsCurrentContext();
 
 	//Creating A Game Object
-	Game gme("MainGame", gfx);
+	Game gme("MainGame", gfx,&keyboard);
 
 	if (glewInit())
 	{
@@ -49,7 +54,7 @@ int main()
 
 		glfwSwapBuffers(gfx.GetWindowAssociated());
 		glfwPollEvents();
-
+		glfwSetKeyCallback(gfx.GetWindowAssociated(), key_callback); //As there is only one window otherwise modify this statement to include all windows
 	}
 
 	glfwTerminate();
@@ -61,4 +66,11 @@ void RenderRoutine(Graphics*gfx)
 {
 	//Test Purposes Only
 	gfx->DrawLine({ 0,0 }, { 1280,1280 }, { 255,255,255 });
+}
+
+//Sets Key Flags Depending on Which Key Is Pressed
+void key_callback(GLFWwindow* window, int key, int scancode, int action, int mods)
+{
+	keyboard.keys[key] = true;
+	std::cout << key << std::endl;
 }
