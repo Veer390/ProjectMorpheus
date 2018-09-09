@@ -16,7 +16,8 @@ bool Game::IsGameOver()
 Game::Game(std::string Identifier, Graphics & gfx)
 	:
 	Identifier(Identifier),
-	gfx(gfx)
+	gfx(gfx),
+	Transformer(gfx)
 {
 #ifdef DEBUG
 	std::cout << "Game Initialized Successfully... IDENTIFIER : " << Identifier << std::endl;
@@ -25,11 +26,25 @@ Game::Game(std::string Identifier, Graphics & gfx)
 
 void Game::ComposeFrame()
 {
+	auto a = TestCube.GetVertices();
+	auto Indexes = TestCube.GetIndices();
+	std::vector<Vei3> Vertices;
+	for (auto i = 0; i < a.size(); i++)
+	{
+		Vertices.emplace_back(Transformer.TransformedToScreenSpace(a[i]));
+	}
 
+	for (int i = 0; i < Indexes.size()-1; i = i + 2)
+	{
+		Vec2 p1 = { float(Vertices[Indexes[i]-1].x),float(Vertices[Indexes[i]-1].y) };
+		//Vec2 p2 = { float(Vertices[Indexes[i++]-1].x),float(Vertices[Indexes[i++]-1].y) };
+		Vec2 p2 = { float(Vertices[Indexes[i+1] - 1].x),float(Vertices[Indexes[i+1] - 1].y) };
+		gfx.DrawLine(p1,p2, { 255,255,255 });
+	}
 }
 
 void Game::DrawFrame()
 {
-	gfx.DrawLine({ 0,0 }, { 1280,1280 }, { 255,0,0 });
+	//gfx.DrawLine({ 320,960 }, { 960,960 }, { 255,0,0 });
 }
 

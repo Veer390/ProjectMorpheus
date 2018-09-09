@@ -22,6 +22,9 @@
     <Filter Include="Header Files\Game">
       <UniqueIdentifier>{12e30e6d-65ff-49b9-a673-3f61cb25a2cf}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Models">
+      <UniqueIdentifier>{6fa2627c-610c-4181-81ee-f6ee6391db67}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -35,6 +38,9 @@
     </ClCompile>
     <ClCompile Include="Game.cpp">
       <Filter>Header Files\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="Cube.cpp">
+      <Filter>Header Files\Models</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -61,6 +67,12 @@
     </ClInclude>
     <ClInclude Include="Game.h">
       <Filter>Header Files\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="VertexAndIndex.h">
+      <Filter>Header Files\DataStructures</Filter>
+    </ClInclude>
+    <ClInclude Include="Cube.h">
+      <Filter>Header Files\Models</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

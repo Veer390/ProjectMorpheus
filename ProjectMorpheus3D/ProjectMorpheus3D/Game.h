@@ -8,6 +8,8 @@
 #include "Vec3.h"
 #include "WorldSpaceToScreenSpaceTransformer.h"
 
+#include "Cube.h"
+
 class Game
 {
 public:
@@ -17,6 +19,7 @@ public:
 private:
 	std::string Identifier;
 	Graphics gfx;
+	WorldToScreenSpaceTransformer Transformer;
 
 	//Flags
 	bool QuitGame = false;
@@ -30,4 +33,8 @@ private:
 public:
 	void GameLoop();
 	bool IsGameOver();
+
+	//Test Code
+public:
+	Cube TestCube;
 };
