@@ -15,12 +15,12 @@ void Graphics::SetAsCurrentContext()
 	glfwMakeContextCurrent(CurrentWindow);
 }
 
-int Graphics::GetScreenHeight()
+int Graphics::GetScreenHeight() const
 {
 	return Height;
 }
 
-int Graphics::GetScreenWidth()
+int Graphics::GetScreenWidth() const
 {
 	return Width;
 }
@@ -116,6 +116,25 @@ void Graphics::PutPixel(int Width, int Height,Color c)
 	//glVertex2f(x / Graphics::ScreenWidth, y / Graphics::ScreenHeight);
 	glEnd();*/
 
+}
+
+void Graphics::DrawModel(BaseModel bsm)
+{
+	auto a = bsm.GetVertices();
+	auto Indexes = bsm.GetIndices();
+	std::vector<Vei3> Vertices;
+	for (auto i = 0; i < a.size(); i++)
+	{
+		Vertices.emplace_back(Transformer.TransformedToScreenSpace(a[i]));
+	}
+
+	for (int i = 0; i < Indexes.size() - 1; i = i + 2)
+	{
+		Vec2 p1 = { float(Vertices[Indexes[i] - 1].x),float(Vertices[Indexes[i] - 1].y) };
+		//Vec2 p2 = { float(Vertices[Indexes[i++]-1].x),float(Vertices[Indexes[i++]-1].y) };
+		Vec2 p2 = { float(Vertices[Indexes[i + 1] - 1].x),float(Vertices[Indexes[i + 1] - 1].y) };
+		DrawLine(p1, p2, { 255,255,255 });
+	}
 }
 
 void Graphics::DrawLine(float x1, float y1, float x2, float y2, Color c)

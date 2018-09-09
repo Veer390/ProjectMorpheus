@@ -3,7 +3,6 @@
 #include<string>
 #include<vector>
 
-#include "Graphics.h"
 #include "Vec3.h"
 #include "Vec2.h"
 #include "Mat3.h"
@@ -13,16 +12,17 @@ class WorldToScreenSpaceTransformer
 {
 public:
 	WorldToScreenSpaceTransformer() = delete; //Delete The Default Constructor
-	WorldToScreenSpaceTransformer(Graphics& gfx) //Minimum gfx Required For This to Work..
+	WorldToScreenSpaceTransformer(int Width,int Height) //Minimum gfx Required For This to Work..
 		:
-		gfx(gfx)
-	{
-		WindowWidth = gfx.GetScreenWidth();
-		WindowHeight = gfx.GetScreenHeight();
+		WindowWidth(Width),
+		WindowHeight(Height)
+	{	
+		//WindowWidth = gfx->GetScreenWidth();
+		//WindowHeight = gfx->GetScreenHeight();
 	}
 
 private:
-	Graphics gfx;
+	//const Graphics* gfx;
 	int WindowWidth;
 	int WindowHeight;
 
@@ -33,5 +33,5 @@ public:
 
 	//Helper Functions
 public:
-	void ChangeWindowAssigned(Graphics& gfx);
+	//void ChangeWindowAssigned(const Graphics* gfx);
 };

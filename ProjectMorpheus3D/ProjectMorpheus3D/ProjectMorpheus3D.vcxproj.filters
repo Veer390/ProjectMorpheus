@@ -42,6 +42,9 @@
     <ClCompile Include="Cube.cpp">
       <Filter>Header Files\Models</Filter>
     </ClCompile>
+    <ClCompile Include="BaseModel.cpp">
+      <Filter>Header Files\Models</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Color.h">
@@ -72,6 +75,9 @@
       <Filter>Header Files\DataStructures</Filter>
     </ClInclude>
     <ClInclude Include="Cube.h">
+      <Filter>Header Files\Models</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseModel.h">
       <Filter>Header Files\Models</Filter>
     </ClInclude>
   </ItemGroup>

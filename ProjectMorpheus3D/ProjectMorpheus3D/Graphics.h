@@ -8,6 +8,8 @@
 
 #include "Color.h"
 #include "Vec2.h"
+#include "BaseModel.h"
+#include "WorldSpaceToScreenSpaceTransformer.h"
 
 class Graphics
 {
@@ -18,7 +20,8 @@ public:
 		Width(WindowWidth),
 		Height(WindowHeight),
 		WindowName(WindowName),
-		CurrentWindow(glfwCreateWindow(WindowWidth,WindowHeight,WindowName.c_str(),NULL,NULL))
+		CurrentWindow(glfwCreateWindow(WindowWidth,WindowHeight,WindowName.c_str(),NULL,NULL)),
+		Transformer(WindowWidth,WindowHeight)
 	{
 		if (!CurrentWindow)
 		{
@@ -28,10 +31,12 @@ public:
 		}
 	}
 private:
+	WorldToScreenSpaceTransformer Transformer;
 	GLFWwindow* CurrentWindow;
 	int Width;
 	int Height;
 	std::string WindowName;
+	//WorldToScreenSpaceTransformer Transformer;
 
 	//Flags
 	bool ShutDownWindow = false;
@@ -41,8 +46,8 @@ public:
 	GLFWwindow * GetWindowAssociated();
 	bool ShouldWindowClose();
 	void SetAsCurrentContext();
-	int GetScreenHeight();
-	int GetScreenWidth();
+	int GetScreenHeight() const;
+	int GetScreenWidth() const;
 
 	//MainFunctions
 public:
@@ -57,6 +62,7 @@ public:
 		DrawLine(p1.x, p1.y, p2.x, p2.y, c);
 	}
 	
+	void DrawModel(BaseModel bsm);
 	//Private Functions
 private:
 	void DrawLine(float x1, float y1, float x2, float y2, Color c);

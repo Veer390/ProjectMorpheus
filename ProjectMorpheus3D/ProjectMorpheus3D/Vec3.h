@@ -48,8 +48,8 @@ public:
 	}
 	_Vec3&	operator=(const _Vec3 &rhs)
 	{
-		x = rhs.x;
-		y = rhs.y;
+		Vec2::x = rhs.Vec2::x;
+		Vec2::y = rhs.Vec2::y;
 		z = rhs.z;
 		return *this;
 	}

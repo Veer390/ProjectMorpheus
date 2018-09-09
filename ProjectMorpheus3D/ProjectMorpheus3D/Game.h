@@ -8,6 +8,7 @@
 #include "Vec3.h"
 #include "WorldSpaceToScreenSpaceTransformer.h"
 
+#include "BaseModel.h"
 #include "Cube.h"
 
 class Game

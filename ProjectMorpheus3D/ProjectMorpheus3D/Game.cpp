@@ -17,7 +17,8 @@ Game::Game(std::string Identifier, Graphics & gfx)
 	:
 	Identifier(Identifier),
 	gfx(gfx),
-	Transformer(gfx)
+	Transformer(gfx.GetScreenWidth(),gfx.GetScreenHeight()),
+	TestCube(1.0f)
 {
 #ifdef DEBUG
 	std::cout << "Game Initialized Successfully... IDENTIFIER : " << Identifier << std::endl;
@@ -26,6 +27,7 @@ Game::Game(std::string Identifier, Graphics & gfx)
 
 void Game::ComposeFrame()
 {
+	/*
 	auto a = TestCube.GetVertices();
 	auto Indexes = TestCube.GetIndices();
 	std::vector<Vei3> Vertices;
@@ -40,11 +42,13 @@ void Game::ComposeFrame()
 		//Vec2 p2 = { float(Vertices[Indexes[i++]-1].x),float(Vertices[Indexes[i++]-1].y) };
 		Vec2 p2 = { float(Vertices[Indexes[i+1] - 1].x),float(Vertices[Indexes[i+1] - 1].y) };
 		gfx.DrawLine(p1,p2, { 255,255,255 });
-	}
+	}*/
 }
 
 void Game::DrawFrame()
 {
+	//BaseModel bsm = TestCube::BaseModel;
+	gfx.DrawModel(TestCube);
 	//gfx.DrawLine({ 320,960 }, { 960,960 }, { 255,0,0 });
 }
 

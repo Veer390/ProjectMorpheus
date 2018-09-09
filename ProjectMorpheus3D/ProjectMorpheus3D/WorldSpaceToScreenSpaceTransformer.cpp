@@ -18,9 +18,9 @@ void WorldToScreenSpaceTransformer::GetTransformedToScreenSpace(Vec3 & VectorToB
 	VectorToBeTransformed.y = (VectorToBeTransformed.y + 1)*WindowHeight / 2;
 }
 
-void WorldToScreenSpaceTransformer::ChangeWindowAssigned(Graphics & gfx)
+/*void WorldToScreenSpaceTransformer::ChangeWindowAssigned(const Graphics * gfx)
 {
 	this->gfx = gfx;
-	WindowWidth = gfx.GetScreenWidth();
-	WindowHeight = gfx.GetScreenHeight();
-}
+	WindowWidth = gfx->GetScreenWidth();
+	WindowHeight = gfx->GetScreenHeight();
+}*/
