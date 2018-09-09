@@ -6,6 +6,7 @@
 #include<conio.h>
 
 #include "Graphics.h"
+#include "Game.h"
 
 void RenderRoutine(Graphics* gfx);
 int main()
@@ -17,8 +18,12 @@ int main()
 		exit(-1);
 	}
 
+	//Creating Graphics Object..
 	Graphics gfx(1280, 1280, "Test");
 	gfx.SetAsCurrentContext();
+
+	//Creating A Game Object
+	Game gme("MainGame", gfx);
 
 	if (glewInit())
 	{
@@ -36,7 +41,11 @@ int main()
 		glColor3f(255, 255, 255);
 
 		//Render here
-		RenderRoutine(&gfx);
+		if (!gme.IsGameOver()) //Game Not Over...
+		{
+			gme.GameLoop();
+		}
+		//RenderRoutine(&gfx);
 
 		glfwSwapBuffers(gfx.GetWindowAssociated());
 		glfwPollEvents();

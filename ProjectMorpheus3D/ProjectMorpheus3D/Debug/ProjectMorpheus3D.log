@@ -1,9 +1,12 @@
-﻿  WorldSpaceToScreenSpaceTransformer.cpp
+﻿  Game.cpp
 z:\projectmorpheus\projectmorpheus3d\projectmorpheus3d\color.h(76): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
 z:\projectmorpheus\projectmorpheus3d\projectmorpheus3d\color.h(81): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
 z:\projectmorpheus\projectmorpheus3d\projectmorpheus3d\color.h(86): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-z:\projectmorpheus\projectmorpheus3d\projectmorpheus3d\worldspacetoscreenspacetransformer.cpp(6): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-z:\projectmorpheus\projectmorpheus3d\projectmorpheus3d\worldspacetoscreenspacetransformer.cpp(7): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+  main.cpp
+z:\projectmorpheus\projectmorpheus3d\projectmorpheus3d\color.h(76): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+z:\projectmorpheus\projectmorpheus3d\projectmorpheus3d\color.h(81): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+z:\projectmorpheus\projectmorpheus3d\projectmorpheus3d\color.h(86): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+  Generating Code...
 LINK : warning LNK4098: defaultlib 'LIBCMT' conflicts with use of other libs; use /NODEFAULTLIB:library
 LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
 glew32s.lib(glew.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'glew32s.lib(glew.obj)' or at 'Z:\ProjectMorpheus\ProjectMorpheus3D\Debug\vc120.pdb'; linking object as if no debug info
