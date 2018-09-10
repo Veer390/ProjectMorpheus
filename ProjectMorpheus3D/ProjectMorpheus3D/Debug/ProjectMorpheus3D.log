@@ -1,11 +1,8 @@
-﻿  Graphics.cpp
+﻿  Game.cpp
 z:\projectmorpheus\projectmorpheus3d\projectmorpheus3d\color.h(76): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
 z:\projectmorpheus\projectmorpheus3d\projectmorpheus3d\color.h(81): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
 z:\projectmorpheus\projectmorpheus3d\projectmorpheus3d\color.h(86): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
 z:\projectmorpheus\projectmorpheus3d\projectmorpheus3d\worldspacetoscreenspacetransformer.h(19): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
 z:\projectmorpheus\projectmorpheus3d\projectmorpheus3d\worldspacetoscreenspacetransformer.h(20): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-z:\projectmorpheus\projectmorpheus3d\projectmorpheus3d\graphics.cpp(126): warning C4018: '<': signed/unsigned mismatch
-z:\projectmorpheus\projectmorpheus3d\projectmorpheus3d\graphics.cpp(131): warning C4018: '<': signed/unsigned mismatch
-z:\projectmorpheus\projectmorpheus3d\projectmorpheus3d\graphics.cpp(261): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-z:\projectmorpheus\projectmorpheus3d\projectmorpheus3d\graphics.cpp(286): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+z:\projectmorpheus\projectmorpheus3d\projectmorpheus3d\game.cpp(63): warning C4018: '<': signed/unsigned mismatch
   ProjectMorpheus3D.vcxproj -> Z:\ProjectMorpheus\ProjectMorpheus3D\Debug\ProjectMorpheus3D.exe

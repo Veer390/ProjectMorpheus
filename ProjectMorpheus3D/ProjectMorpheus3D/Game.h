@@ -43,5 +43,5 @@ public:
 	Cube TestCube;
 
 public:
-	bool TestFlag = false;
+	bool TestFlag = true;
 };

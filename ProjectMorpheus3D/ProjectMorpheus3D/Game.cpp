@@ -48,24 +48,54 @@ void Game::ComposeFrame()
 
 void Game::DrawFrame()
 {
-	Vec2 p0 = { 250.0f,250.0f };
-	Vec2 p1 = { 100.0f,1000.0f };
-	Vec2 p2 = { 800.0f,1000.0f };
+	
+	auto a = TestCube.GetVertices();
+	if (TestFlag)
+	{
+		for (auto& i : a)
+		{
+			i += {0.0f, 0.0f, +2.0f};
+		}
+		//TestFlag = false;
+	}
+	std::vector<int> Indexes = TestCube.GetTriangleIndices();
+	std::vector<Vei3> Vertices;
+	for (auto i = 0; i < a.size(); i++)
+	{
+		Vertices.emplace_back(Transformer.TransformedToScreenSpace(a[i]));
+	}
 
-	gfx.DrawFlatBottomTriangle(p0, p1, p2, { 255,255,255 });
+	Vec2 p1 = { float(Vertices[Indexes[0]].x),float(Vertices[Indexes[0]].y) };
+	Vec2 p2 = { float(Vertices[Indexes[1]].x),float(Vertices[Indexes[1]].y) };
+	Vec2 p3 = { float(Vertices[Indexes[2]].x),float(Vertices[Indexes[2]].y) };
+
+	gfx.DrawTriangle(p1, p2, p3, { 255,255,255 });
+	/*for (int i = 0; i < Indexes.size() - 2; i = i + 3)
+	{
+		Vec2 p1 = { float(Vertices[Indexes[i] - 1].x),float(Vertices[Indexes[i] - 1].y) };
+		//Vec2 p2 = { float(Vertices[Indexes[i++]-1].x),float(Vertices[Indexes[i++]-1].y) };
+		Vec2 p2 = { float(Vertices[Indexes[i + 1] - 1].x),float(Vertices[Indexes[i + 1] - 1].y) };
+		Vec2 p3 = { float(Vertices[Indexes[i + 2] - 1].x),float(Vertices[Indexes[i + 2] - 1].y) };
+		gfx.DrawTriangle(p1, p2, p3, { 255,255,255 });
+	}*/
+	/*Vec2 p0 = { 250.0f,1000.0f };
+	Vec2 p1 = { 100.0f,250.0f };
+	Vec2 p2 = { 800.0f,250.0f };
+
+	gfx.DrawTriangle(p0, p1, p2, { 255,255,255 });*/
 	//gfx.DrawTriangle(p0,p1 , p2, { 255,255,255 });
 
 	//Getting The Cube To Origin For PErforming The Rotation....
 	//Rotation Must Be Performed With Respect to 0,0,0 always if it has to be Uniformed
-	/*if (TestFlag)
+	if (TestFlag)
 	{
-		for (auto& i : TestCube.GetVertices())
+		for (auto& i : a)
 		{
 			i += {0.0f, 0.0f, -2.0f};
 		}
 	}
 	
-	//Rotating The TestCube However We Want By Using These Keys
+	/*//Rotating The TestCube However We Want By Using These Keys
 	if (kbd->CheckKeyIsPressed(265))
 	{
 		TestCube.RotateX(theta);

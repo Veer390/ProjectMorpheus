@@ -19,8 +19,9 @@ public:
 	Cube(float side);
 
 public:
-
+	std::vector<int> TriangleIndices;
 public:
+	std::vector<int>& GetTriangleIndices();
 	std::vector<Vec3>& GetVertices();
 	std::vector<int>& GetIndices();
 

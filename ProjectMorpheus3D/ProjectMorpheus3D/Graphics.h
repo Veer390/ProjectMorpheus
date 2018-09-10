@@ -71,12 +71,12 @@ public:
 	void DrawTriangle(Vec2& P0, Vec2& P1, Vec2& P2,Color C);
 	
 	//Test
-	void DrawFlatBottomTriangle(Vec2& V0, Vec2& V1, Vec2& V2,Color C);
 	//Private Functions
 private:
+	void DrawFlatBottomTriangle(Vec2& V0, Vec2& V1, Vec2& V2,Color C);
+	void DrawFlatTopTriangle(Vec2& V0, Vec2& V1, Vec2& V2,Color C);
 
 	void DrawLine(float x1, float y1, float x2, float y2, Color c);
 	void GetNormalized(Vec2& ScreenCoordinates);
 
-	void DrawFlatTopTriangle(Vec2& V0, Vec2& V1, Vec2& V2,Color C);
 };
