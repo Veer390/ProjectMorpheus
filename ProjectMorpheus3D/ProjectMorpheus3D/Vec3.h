@@ -55,8 +55,8 @@ public:
 	}
 	_Vec3&	operator+=(const _Vec3 &rhs)
 	{
-		x += rhs.x;
-		y += rhs.y;
+		Vec2::x += rhs.x;
+		Vec2::y += rhs.y;
 		z += rhs.z;
 		return *this;
 	}
@@ -81,8 +81,8 @@ public:
 	}
 	_Vec3&	operator*=(const T &rhs)
 	{
-		x *= rhs;
-		y *= rhs;
+		Vec2::x *= rhs;
+		Vec2::y *= rhs;
 		z *= rhs;
 		return *this;
 	}

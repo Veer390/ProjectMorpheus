@@ -48,6 +48,17 @@ void Game::ComposeFrame()
 
 void Game::DrawFrame()
 {
+	//Getting The Cube To Origin For PErforming The Rotation....
+	//Rotation Must Be Performed With Respect to 0,0,0 always if it has to be Uniformed
+	if (TestFlag)
+	{
+		for (auto& i : TestCube.GetVertices())
+		{
+			i += {0.0f, 0.0f, -2.0f};
+		}
+	}
+	
+	//Rotating The TestCube However We Want By Using These Keys
 	if (kbd->CheckKeyIsPressed(265))
 	{
 		TestCube.RotateX(theta);
@@ -60,7 +71,18 @@ void Game::DrawFrame()
 	{
 		TestCube.RotateZ(theta);
 	}
+
+	//Pushing The Cube Away From The Camera So That We Can actually See The Perspective Projection Of The Cube
+	//This is Going On Every Frame Because We Want To rotate The Cube At The Screen Origin 0,0,0 As There is No Model Origin 
+	//And Also View It By Pushing it a Little Away from the eye so that we can see the perspective projection
+	for (auto& i : TestCube.GetVertices())
+	{
+		i += {0.0f, 0.0f, 2.0f};
+	}
+	TestFlag = true;
 	//BaseModel bsm = TestCube::BaseModel;
+
+	//Drawing the cube With BSM Component inside it...
 	gfx.DrawModel(TestCube);
 	//gfx.DrawLine({ 320,960 }, { 960,960 }, { 255,0,0 });
 }

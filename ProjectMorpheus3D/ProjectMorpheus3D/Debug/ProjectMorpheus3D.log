@@ -1,21 +1,7 @@
-﻿  BaseModel.cpp
-z:\projectmorpheus\projectmorpheus3d\projectmorpheus3d\basemodel.cpp(34): warning C4018: '<': signed/unsigned mismatch
-z:\projectmorpheus\projectmorpheus3d\projectmorpheus3d\basemodel.cpp(48): warning C4018: '<': signed/unsigned mismatch
-z:\projectmorpheus\projectmorpheus3d\projectmorpheus3d\basemodel.cpp(62): warning C4018: '<': signed/unsigned mismatch
-  Cube.cpp
-  Game.cpp
+﻿  Game.cpp
 z:\projectmorpheus\projectmorpheus3d\projectmorpheus3d\color.h(76): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
 z:\projectmorpheus\projectmorpheus3d\projectmorpheus3d\color.h(81): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
 z:\projectmorpheus\projectmorpheus3d\projectmorpheus3d\color.h(86): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-  Graphics.cpp
-z:\projectmorpheus\projectmorpheus3d\projectmorpheus3d\color.h(76): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-z:\projectmorpheus\projectmorpheus3d\projectmorpheus3d\color.h(81): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-z:\projectmorpheus\projectmorpheus3d\projectmorpheus3d\color.h(86): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-z:\projectmorpheus\projectmorpheus3d\projectmorpheus3d\graphics.cpp(126): warning C4018: '<': signed/unsigned mismatch
-z:\projectmorpheus\projectmorpheus3d\projectmorpheus3d\graphics.cpp(131): warning C4018: '<': signed/unsigned mismatch
-  main.cpp
-z:\projectmorpheus\projectmorpheus3d\projectmorpheus3d\color.h(76): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-z:\projectmorpheus\projectmorpheus3d\projectmorpheus3d\color.h(81): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-z:\projectmorpheus\projectmorpheus3d\projectmorpheus3d\color.h(86): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-  Generating Code...
+z:\projectmorpheus\projectmorpheus3d\projectmorpheus3d\worldspacetoscreenspacetransformer.h(19): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+z:\projectmorpheus\projectmorpheus3d\projectmorpheus3d\worldspacetoscreenspacetransformer.h(20): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
   ProjectMorpheus3D.vcxproj -> Z:\ProjectMorpheus\ProjectMorpheus3D\Debug\ProjectMorpheus3D.exe

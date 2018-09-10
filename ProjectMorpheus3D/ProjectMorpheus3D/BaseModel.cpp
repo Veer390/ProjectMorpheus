@@ -13,12 +13,12 @@ std::string BaseModel::GetName()
 	return ModelName;
 }
 
-std::vector<Vec3> BaseModel::GetVertices()
+std::vector<Vec3>& BaseModel::GetVertices()
 {
 	return Vertices;
 }
 
-std::vector<int> BaseModel::GetIndices()
+std::vector<int>& BaseModel::GetIndices()
 {
 	return Indices;
 }

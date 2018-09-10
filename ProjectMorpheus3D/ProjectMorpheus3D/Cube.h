@@ -21,8 +21,8 @@ public:
 public:
 
 public:
-	std::vector<Vec3> GetVertices();
-	std::vector<int> GetIndices();
+	std::vector<Vec3>& GetVertices();
+	std::vector<int>& GetIndices();
 
 	VertexAndIndex GetVerticesAndIndices();
 };

@@ -15,7 +15,9 @@ public:
 	WorldToScreenSpaceTransformer(int Width,int Height) //Minimum gfx Required For This to Work..
 		:
 		WindowWidth(Width),
-		WindowHeight(Height)
+		WindowHeight(Height),
+		xFactor(float(Width)/2.0f),
+		yFactor(float(Height)/2.0f)
 	{	
 		//WindowWidth = gfx->GetScreenWidth();
 		//WindowHeight = gfx->GetScreenHeight();
@@ -26,8 +28,12 @@ private:
 	int WindowWidth;
 	int WindowHeight;
 
+	int xFactor;
+	int yFactor;
+
 	//Main functions associated with the class
 public:
+	Vei3 PerSpectiveTransformedToScreenSpace(Vec3 VectorToBeTransformed);
 	Vei3 TransformedToScreenSpace(Vec3 VectorToBeTransformed);
 	void GetTransformedToScreenSpace(Vec3& VectorToBeTransformed);
 

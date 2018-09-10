@@ -41,4 +41,7 @@ public:
 	//Test Code
 public:
 	Cube TestCube;
+
+public:
+	bool TestFlag = false;
 };

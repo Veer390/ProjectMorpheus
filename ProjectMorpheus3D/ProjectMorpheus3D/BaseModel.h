@@ -20,8 +20,8 @@ protected:
 	//Helper Functions...
 public:
 	std::string GetName();
-	std::vector<Vec3> GetVertices();
-	std::vector<int> GetIndices();
+	std::vector<Vec3>& GetVertices();
+	std::vector<int>& GetIndices();
 		
 public:
 	//Main Functions...

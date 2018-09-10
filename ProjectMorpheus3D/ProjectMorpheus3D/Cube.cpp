@@ -23,12 +23,12 @@ Cube::Cube(float side)
 	BaseModel::Indices = _Indices;
 }
 
-std::vector<Vec3> Cube::GetVertices()
+std::vector<Vec3>& Cube::GetVertices()
 {
 	return Vertices;
 }
 
-std::vector<int> Cube::GetIndices()
+std::vector<int>& Cube::GetIndices()
 {
 	return Indices;
 }
