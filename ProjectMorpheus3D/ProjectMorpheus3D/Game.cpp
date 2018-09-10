@@ -48,9 +48,16 @@ void Game::ComposeFrame()
 
 void Game::DrawFrame()
 {
+	Vec2 p0 = { 250.0f,250.0f };
+	Vec2 p1 = { 100.0f,1000.0f };
+	Vec2 p2 = { 800.0f,1000.0f };
+
+	gfx.DrawFlatBottomTriangle(p0, p1, p2, { 255,255,255 });
+	//gfx.DrawTriangle(p0,p1 , p2, { 255,255,255 });
+
 	//Getting The Cube To Origin For PErforming The Rotation....
 	//Rotation Must Be Performed With Respect to 0,0,0 always if it has to be Uniformed
-	if (TestFlag)
+	/*if (TestFlag)
 	{
 		for (auto& i : TestCube.GetVertices())
 		{
@@ -84,6 +91,6 @@ void Game::DrawFrame()
 
 	//Drawing the cube With BSM Component inside it...
 	gfx.DrawModel(TestCube);
-	//gfx.DrawLine({ 320,960 }, { 960,960 }, { 255,0,0 });
+	//gfx.DrawLine({ 320,960 }, { 960,960 }, { 255,0,0 });*/
 }
 

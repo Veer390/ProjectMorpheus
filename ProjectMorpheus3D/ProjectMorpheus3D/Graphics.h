@@ -56,15 +56,27 @@ public:
 		Note- In PutPixel Y Goes from 1 to Height Whereas 
 						  X Goes from 0 to Height-1
 	*/
-	void PutPixel(int Width,int Height,Color c);
-	void DrawLine(const Vec2& p1, const Vec2& p2, Color c)
+	void PutPixel(int Width,int Height,Color c); //Takes ScreenSpace Coordinates To Draw..
+	void DrawLine(const Vec2& p1, const Vec2& p2, Color c) //Takes Screen Space Coordinates to draw...
 	{
 		DrawLine(p1.x, p1.y, p2.x, p2.y, c);
 	}
 	
+	//This Function Takes World Space Coordinates To Draw...
 	void DrawModel(BaseModel bsm);
+
+	/*Notes About Draw Triangle---
+		Consider The Left Centric Triangle Always As Standrad And Right As Inversion And You Should Be Fine...*/
+	//This Function Takes ScreenSpace Coordinates To Draw...
+	void DrawTriangle(Vec2& P0, Vec2& P1, Vec2& P2,Color C);
+	
+	//Test
+	void DrawFlatBottomTriangle(Vec2& V0, Vec2& V1, Vec2& V2,Color C);
 	//Private Functions
 private:
+
 	void DrawLine(float x1, float y1, float x2, float y2, Color c);
 	void GetNormalized(Vec2& ScreenCoordinates);
+
+	void DrawFlatTopTriangle(Vec2& V0, Vec2& V1, Vec2& V2,Color C);
 };

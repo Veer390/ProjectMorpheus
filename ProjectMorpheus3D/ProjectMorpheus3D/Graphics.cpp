@@ -137,6 +137,55 @@ void Graphics::DrawModel(BaseModel bsm)
 	}
 }
 
+void Graphics::DrawTriangle(Vec2 & P0, Vec2 & P1, Vec2 & P2,Color C)
+{
+	Vec2* V0 = &P0;
+	Vec2* V1 = &P1;
+	Vec2* V2 = &P2;
+	//Make P0 Always Be The Point At The Bottom
+	if (V1->y > V0->y)
+		std::swap(V0, V1);
+	if (V2->y > V0->y)
+		std::swap(V2, V0);
+
+	//By This Point It Is Already Understood P0 is at the top
+	//Making P1 To Be In The Middle Extreme Case P1 And P0 Will Be Same Making The Triangle FlatTop
+	//P2 and  P1 Will Be The Same Making The Triangle FlatBottom.
+	if (V2->y > V1->y)
+		std::swap(V2, V1);
+
+	if (V2->y == V1->y) //Naturally Flat Top
+	{
+		DrawFlatTopTriangle(*V0, *V1, *V2,C);
+	}
+	else if (V0->y == V1->y) //Naturally Flat Bottom
+	{
+		DrawFlatBottomTriangle(*V0, *V1, *V2,C);
+	}
+	else  //General Triangle
+	{
+		//Calculate Alpha
+		float AlphaValue = V1->y - V0->y / V2->y - V0->y;
+
+		Vec2 SplittingVertex;
+		SplittingVertex.x = (1 - AlphaValue)*V0->x + AlphaValue * V2->x;
+		SplittingVertex.y = (1 - AlphaValue)*V0->y + AlphaValue * V2->y;
+
+		if (SplittingVertex.x > V1->x) //Right Centric
+		{
+			DrawFlatTopTriangle(*V1,SplittingVertex,*V2,C);
+			DrawFlatBottomTriangle(*V0,*V1,SplittingVertex,C);
+		}
+
+		if (SplittingVertex.x < V1->x) //Left Centric
+		{
+			DrawFlatTopTriangle(SplittingVertex,*V1,*V2,C);
+			DrawFlatBottomTriangle(*V0,SplittingVertex,*V1,C);
+		}
+	}
+
+}
+
 void Graphics::DrawLine(float x1, float y1, float x2, float y2, Color c)
 {
 	const float dx = x2 - x1;
@@ -194,4 +243,48 @@ void Graphics::GetNormalized(Vec2& ScreenCoordinates)
 {
 	ScreenCoordinates.x = ScreenCoordinates.x / (Width/2);
 	ScreenCoordinates.y = ScreenCoordinates.y / (Height/2);
+}
+
+void Graphics::DrawFlatTopTriangle(Vec2 & V0, Vec2 & V1, Vec2 & V2, Color C)
+{
+	int YEnd = int(ceil(V0.y));
+	int YStart= int(ceil(V2.y));
+
+	//Slopes Of The Line
+	float SlopeInverseV2V0 = abs((V0.x - V2.x)) / abs((V0.y - V2.y));
+	float SlopeInverseV0V1 = abs((V1.x - V0.x)) / abs((V1.y - V0.y));  //Fall in Y multiplied By Slope Gives Change in X..
+
+	for (int i = YStart; i < YEnd; i++)
+	{
+		float XBegin = SlopeInverseV2V0 * (float(i)  - V2.x) + V2.x;
+		float XEnd = SlopeInverseV0V1 * (float(i) - V1.x) + V1.x;
+		for (int x = XBegin; x < XEnd; x++)
+		{
+			PutPixel(x, i, C);
+		}
+	}
+		
+}
+
+void Graphics::DrawFlatBottomTriangle(Vec2 & V0, Vec2 & V1, Vec2 & V2, Color C)
+{
+	//Start And End To Draw Flat Bottom And Flat top Triangle
+	float Ystart = V0.y;
+	float YEnd = V1.y;
+
+	//Inverse Slopes Of The Two Lines
+	float m1 = (V0.x - V1.x) / (V0.y - V1.y);
+	float m2 = (V0.x - V2.x) / (V0.y - V2.y);
+
+	for (float i = Ystart; i < YEnd; i++)
+	{
+		float XStart = ((V0.x - V1.x)*(i - V0.y) / (V0.y - V1.y)) + V0.x;
+		float XEnd = ((V0.x - V2.x)*(i - V0.y) / (V0.y - V2.y)) + V0.x;
+
+		for (auto j = XStart; j < XEnd; j++)
+		{
+			PutPixel(j, i, C); //Here Y is i And X is J... 
+		}
+	}
+
 }
