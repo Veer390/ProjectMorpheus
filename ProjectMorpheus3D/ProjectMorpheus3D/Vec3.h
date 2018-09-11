@@ -18,7 +18,7 @@ public:
 	template <typename T2>
 	explicit operator _Vec3<T2>() const
 	{
-		return{ (T2)x,(T2)y,(T2)z };
+		return{ (T2)Vec2::x,(T2)Vec2::y,(T2)z };
 	}
 	T		LenSq() const
 	{

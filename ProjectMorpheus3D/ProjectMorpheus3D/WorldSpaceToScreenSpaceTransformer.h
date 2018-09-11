@@ -34,7 +34,7 @@ private:
 	//Main functions associated with the class
 public:
 	Vei3 PerSpectiveTransformedToScreenSpace(Vec3 VectorToBeTransformed);
-	Vei3 TransformedToScreenSpace(Vec3 VectorToBeTransformed);
+	Vec3 TransformedToScreenSpace(Vec3 VectorToBeTransformed);
 	void GetTransformedToScreenSpace(Vec3& VectorToBeTransformed);
 
 	//Helper Functions

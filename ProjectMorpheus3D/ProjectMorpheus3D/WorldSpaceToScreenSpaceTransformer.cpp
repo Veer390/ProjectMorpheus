@@ -1,6 +1,6 @@
 #include "WorldSpaceToScreenSpaceTransformer.h"
 
-Vei3 WorldToScreenSpaceTransformer::TransformedToScreenSpace(Vec3 VectorToBeTransformed)
+Vec3 WorldToScreenSpaceTransformer::TransformedToScreenSpace(Vec3 VectorToBeTransformed)
 {
 	const float zInv = 1.0f / VectorToBeTransformed.z;
 	// divide all position components and attributes by z
@@ -16,7 +16,7 @@ Vei3 WorldToScreenSpaceTransformer::TransformedToScreenSpace(Vec3 VectorToBeTran
 	// so that we can recover the attributes after interp.)
 	VectorToBeTransformed.z = zInv;
 
-	Vei3 Temp;
+	Vec3 Temp;
 	Temp.x = VectorToBeTransformed.x;
 	Temp.y = VectorToBeTransformed.y;
 	return Temp;
